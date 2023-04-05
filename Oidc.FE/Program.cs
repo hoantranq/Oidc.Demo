@@ -1,7 +1,11 @@
+using Oidc.FE.Services.Auth;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

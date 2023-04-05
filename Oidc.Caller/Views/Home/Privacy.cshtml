@@ -1,6 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
+<h1>Caller @ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>ID TOKEN: <span id="id_token">NULL</span></p>
+
+<script>
+    if (window.location.hash) {
+        // Fragment exists
+        document.getElementById("id_token").innerHTML = window.location.hash.substring(1);
+        
+        console.log("Fragment exists: ");
+        console.log(window.location.hash);
+    } else {
+        // Fragment doesn't exist
+        
+        console.log("Fragment doesn't exists");
+    }
+</script>

@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Login with QR Code</h1>
+
+    <img alt="Embedded QR Code" style="width: 150px; height: 150px;" src="data:image/@TempData["imageType"];base64, @Html.Raw(TempData["qrCodeImageAsBase64"])" />
+
+    <a asp-controller="Authorize" asp-action="ClientLoginWithoutQrCode">...Or click here to bypass QR Code</a>
+</div>

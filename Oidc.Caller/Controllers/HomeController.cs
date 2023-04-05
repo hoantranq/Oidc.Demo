@@ -28,5 +28,18 @@ namespace Oidc.Caller.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Login()
+        {
+            var targetUrl = "https://localhost:7777/Authorize" +
+                            "?client_id=123" +
+                            "&redirect_uri=https://localhost:7777/Home/Privacy" +
+                            "&response_type=id_token" +
+                            "scope=" +
+                            "state=af0ifjsldkj" +
+                            "&nonce=jxdlsjfi0fa";
+
+            return Redirect(targetUrl);
+        }
     }
 }
